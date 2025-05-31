@@ -1,0 +1,48 @@
+gnore Python compiled files
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Virtual environment
+venv/
+env/
+
+# Django logs
+logs/
+*.log
+
+# Database files
+db.sqlite3
+*.pdb
+
+# Ignore Django migrations
+**/migrations/*
+
+# Media and static files
+media/
+staticfiles/
+
+# Secret key and environment variables
+.env
+config/settings/local.py  # If using different settings for development
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Node modules (if using frontend dependencies)
+node_modules/
+
+# Docker-related files
+*.dockerignore
+docker-compose.override.yml
+
+# Ignore coverage and test reports
+htmlcov/
+.coverage
+*.cover
+pytest_cache/
+

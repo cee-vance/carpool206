@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Carpooling App{% endblock %}</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+    {% block extra_head %}
+    <!-- Child templates can add extra styles or meta tags here -->
+    {% endblock %}
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="{% url 'core:profile' %}">Profile</a></li>
+                <li><a href="{% url 'chat:recent_chats' %}">Chats</a></li>
+                <li><a href="{% url 'schedules:schedule_list' %}">Schedules</a></li>
+                {% if request.user.is_authenticated %}
+                    <li>
+                       <li><a href="{% url 'core:logout' %}" class="login-btn">Logout</a></li>
+                    </li>
+                {% else %}
+                    <li><a href="{% url 'core:login' %}" class="login-btn">Login</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        {% block content %}
+        <!-- Child templates will override this section -->
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Carpooling App. All rights reserved.</p>
+    </footer>
+
+    {% block extra_scripts %}
+    <!-- Child templates can add extra JavaScript here -->
+    {% endblock %}
+
+</body>
+</html>

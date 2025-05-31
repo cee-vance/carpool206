@@ -1,0 +1,26 @@
+{% extends "core/base.html" %}
+
+{% block title %}{% if schedule %}Edit{% else %}Create{% endif %} Schedule{% endblock %}
+
+{% block content %}
+<div class="schedule-form-container">
+    <h2>{% if schedule %}Edit{% else %}Create{% endif %} Schedule</h2>
+
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.as_p }}
+        </div>
+
+        <button type="submit" class="save-btn">Save</button>
+
+        {% if schedule %}
+            <a href="{% url 'schedules:schedule_delete' schedule.id 'delete' %}" class="delete-link">Delete Schedule</a>
+        {% endif %}
+
+        {% if request.session.geocode_error %}
+            <p class="error-message">{{ request.session.geocode_error }}</p>
+        {% endif %}
+    </form>
+</div>
+{% endblock %}

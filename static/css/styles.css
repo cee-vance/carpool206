@@ -1,0 +1,168 @@
+.profile-container {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+/* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    background: url('/static/images/seattle.jpg') center/cover;
+    color: white;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+}
+
+.cta-btn {
+    background: #28a745;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cta-btn:hover {
+    background: #218838;
+}
+
+/* Stats Section */
+.stats-section {
+    text-align: center;
+    padding: 50px 20px;
+    background: white;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.stat-card {
+    background: #fff;
+    padding: 20px;
+    width: 30%;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+}
+
+/* How It Works */
+.how-it-works {
+    text-align: center;
+    padding: 50px 20px;
+    background: #e3e3e3;
+}
+
+.steps {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.step {
+    background: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    width: 30%;
+    margin: 10px;
+}
+
+/* Carbon Calculator */
+.carbon-calculator {
+    text-align: center;
+    padding: 50px 20px;
+    background: white;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    padding: 10px;
+    width: 80%;
+    margin-bottom: 10px;
+}
+
+button {
+    background: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* Testimonials */
+.testimonials {
+    text-align: center;
+    padding: 50px 20px;
+    background: #e3e3e3;
+}
+
+/* Signup Section */
+.signup {
+    text-align: center;
+    padding: 50px 20px;
+    background: white;
+}
+
+.signup form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.signup input {
+    padding: 10px;
+    width: 80%;
+    margin-bottom: 10px;
+}
+
+.signup button {
+    background: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.signup button:hover {
+    background: #218838;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .stats, .steps {
+        flex-direction: column;
+    }
+    .stat-card, .step {
+        width: 80%;
+    }
+}

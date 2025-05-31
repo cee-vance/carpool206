@@ -1,0 +1,66 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+<div class="hero">
+    <h1>Reduce Carbon, Share Rides, Make a Difference!</h1>
+    <p>Join Seattle’s movement toward sustainable commuting.</p>
+    <button class="cta-btn">Start Carpooling Today!</button>
+</div>
+
+<div class="stats-section">
+    <h2>Seattle Carpooling Impact</h2>
+    <div class="stats">
+        <div class="stat-card">
+            <h3>CO₂ Reduced</h3>
+            <p>Seattle commuters save <strong>50,000 tons</strong> of CO₂ annually!</p>
+        </div>
+        <div class="stat-card">
+            <h3>Fuel Savings</h3>
+            <p>Save up to <strong>$1,200 per year</strong> by carpooling.</p>
+        </div>
+        <div class="stat-card">
+            <h3>Traffic Reduction</h3>
+            <p>Carpooling reduces commute time by <strong>30%</strong>.</p>
+        </div>
+    </div>
+</div>
+
+<div class="how-it-works">
+    <h2>How It Works</h2>
+    <div class="steps">
+        <div class="step">🚗 <strong>Sign up:</strong> Create your profile</div>
+        <div class="step">📅 <strong>Find matches:</strong> Smart AI pairs you with ideal carpoolers</div>
+        <div class="step">🌱 <strong>Track impact:</strong> See your carbon footprint reduction</div>
+    </div>
+</div>
+
+<div class="carbon-calculator">
+    <h2>Calculate Your Impact</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="distance">Enter your daily commute distance (miles):</label>
+        <input type="number" id="distance" name="distance" required>
+        <button type="submit">Calculate</button>
+    </form>
+    {% if carbon_savings %}
+        <p>You save approximately <strong>{{ carbon_savings }}</strong> lbs of CO₂ per year!</p>
+    {% endif %}
+</div>
+
+<div class="testimonials">
+    <h2>What Our Users Say</h2>
+    <p>⭐⭐⭐⭐⭐ "Carpooling saved me money and helped the environment!" - Alex, Seattle</p>
+    <p>⭐⭐⭐⭐⭐ "I’ve met great people through this app!" - Jordan, Bellevue</p>
+</div>
+
+<div class="signup">
+    <h2>Join the Movement</h2>
+    <form method="POST" action="{% url 'core:register' %}">
+        {% csrf_token %}
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <button type="submit">Sign Up</button>
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,1010 @@
+/* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Header & Navigation */
+header {
+    background: #007bff;
+    padding: 15px 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    background: url('/static/images/seattle.jpg') center/cover no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    background: url('/static/images/seattle.jpg') center/cover no-repeat;
+    color: white;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+}
+
+.cta-btn {
+    background: #28a745;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cta-btn:hover {
+    background: #218838;
+}
+
+/* Stats Section */
+.stats-section {
+    text-align: center;
+    padding: 50px 20px;
+    background: white;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.stat-card {
+    background: #fff;
+    padding: 20px;
+    width: 30%;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+}
+
+/* How It Works */
+.how-it-works {
+    text-align: center;
+    padding: 50px 20px;
+    background: #e3e3e3;
+}
+
+.steps {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.step {
+    background: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    width: 30%;
+    margin: 10px;
+}
+
+/* Carbon Calculator */
+.carbon-calculator {
+    text-align: center;
+    padding: 50px 20px;
+    background: white;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    padding: 10px;
+    width: 80%;
+    margin-bottom: 10px;
+}
+
+button {
+    background: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* Testimonials */
+.testimonials {
+    text-align: center;
+    padding: 50px 20px;
+    background: #e3e3e3;
+}
+
+/* Signup Section */
+.signup {
+    text-align: center;
+    padding: 50px 20px;
+    background: white;
+}
+
+.signup form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.signup input {
+    padding: 10px;
+    width: 80%;
+    margin-bottom: 10px;
+}
+
+.signup button {
+    background: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.signup button:hover {
+    background: #218838;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #222;
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .stats, .steps {
+        flex-direction: column;
+    }
+    .stat-card, .step {
+        width: 80%;
+    }
+}
+
+/* Profile Page */
+.profile-container {
+    width: 80%;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    background: white;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-radius: 8px;
+}
+
+.profile-container h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #007bff;
+}
+
+.profile-picture {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #007bff;
+    margin-bottom: 20px;
+}
+
+.profile-container p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.profile-container h3 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    color: #333;
+}
+
+.profile-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.profile-container ul li {
+    margin-bottom: 10px;
+}
+
+.profile-container ul li a {
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: #007bff;
+    transition: 0.3s;
+}
+
+.profile-container ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-container {
+        width: 90%;
+        padding: 20px;
+    }
+    .profile-picture {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Profile Edit Page */
+.profile-edit-container {
+    width: 80%;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background: white;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-radius: 8px;
+}
+
+.profile-edit-container h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #007bff;
+}
+
+.profile-edit-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-edit-container label {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    font-weight: bold;
+    display: block;
+}
+
+.profile-edit-container input {
+    padding: 10px;
+    width: 80%;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.profile-edit-container button {
+    background: #28a745;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+.profile-edit-container button:hover {
+    background: #218838;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-edit-container {
+        width: 90%;
+        padding: 20px;
+    }
+    .profile-edit-container input {
+        width: 100%;
+    }
+}
+
+/* Login Page */
+.login-container {
+    width: 80%;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background: white;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-radius: 8px;
+}
+
+.login-container h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #007bff;
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-container input {
+    padding: 10px;
+    width: 80%;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.login-container button {
+    background: #007bff;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+.login-container button:hover {
+    background: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .login-container {
+        width: 90%;
+        padding: 20px;
+    }
+}
+
+/* Register Page */
+.register-container {
+    width: 80%;
+    max-width: 450px;
+    margin: 50px auto;
+    padding: 30px;
+    background: white;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-radius: 8px;
+}
+
+.register-container h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #007bff;
+}
+
+.register-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.register-container label {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    font-weight: bold;
+    display: block;
+}
+
+.register-container input {
+    padding: 10px;
+    width: 80%;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.register-container input[type="file"] {
+    border: none;
+}
+
+.register-container button {
+    background: #28a745;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+.register-container button:hover {
+    background: #218838;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .register-container {
+        width: 90%;
+        padding: 20px;
+    }
+}
+
+
+/* Schedules Page */
+.schedules-container {
+    width: 90%;
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 30px;
+    background: white;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.schedules-container h1 {
+    font-size: 2rem;
+    color: #007bff;
+}
+
+/* Table Styling */
+.schedules-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.schedules-table th, .schedules-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.schedules-table th {
+    background: #007bff;
+    color: white;
+    font-weight: bold;
+}
+
+.schedules-table tr:nth-child(even) {
+    background: #f4f4f4;
+}
+
+.edit-link, .match-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.edit-link:hover, .match-link:hover {
+    text-decoration: underline;
+}
+
+/* Empty Schedules Message */
+.no-schedules {
+    font-style: italic;
+    color: #999;
+}
+
+/* New Schedule Button */
+.new-schedule {
+    margin-top: 20px;
+}
+
+.new-schedule-btn {
+    display: inline-block;
+    background: #28a745;
+    color: white;
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.new-schedule-btn:hover {
+    background: #218838;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .schedules-container {
+        width: 95%;
+        padding: 20px;
+    }
+    .schedules-table th, .schedules-table td {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+    .new-schedule-btn {
+        font-size: 1rem;
+        padding: 8px 12px;
+    }
+}
+
+/* Create/Edit Schedule Page */
+.schedule-form-container {
+    width: 80%;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background: white;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.schedule-form-container h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #007bff;
+}
+
+.form-group {
+    text-align: left;
+}
+
+.schedule-form-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.schedule-form-container input,
+.schedule-form-container select,
+.schedule-form-container textarea {
+    padding: 10px;
+    width: 80%;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Buttons */
+.save-btn {
+    background: #28a745;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+.save-btn:hover {
+    background: #218838;
+}
+
+.delete-link {
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 1rem;
+    color: #dc3545;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.delete-link:hover {
+    text-decoration: underline;
+}
+
+/* Error Message */
+.error-message {
+    color: #dc3545;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .schedule-form-container {
+        width: 90%;
+        padding: 20px;
+    }
+}
+
+
+/* Similar Schedules Page */
+.similar-schedules-container {
+    width: 90%;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    background: white;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.similar-schedules-container h2 {
+    font-size: 2rem;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.similar-schedules-container p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.schedule-list {
+    list-style: none;
+    padding: 0;
+}
+
+.schedule-card {
+    background: #f8f9fa;
+    padding: 15px;
+    margin: 10px auto;
+    border-radius: 6px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.schedule-card strong {
+    font-size: 1.2rem;
+    color: #007bff;
+}
+
+.schedule-card span {
+    display: block;
+    font-size: 1rem;
+    color: #333;
+}
+
+.chat-btn {
+    display: inline-block;
+    background: #007bff;
+    color: white;
+    padding: 8px 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.chat-btn:hover {
+    background: #0056b3;
+}
+
+/* No Matches Found */
+.no-schedules {
+    font-style: italic;
+    color: #999;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .similar-schedules-container {
+        width: 95%;
+        padding: 20px;
+    }
+    .schedule-card {
+        width: 90%;
+    }
+    .chat-btn {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+    }
+}
+
+
+/* Delete Confirmation Page */
+.delete-container {
+    width: 80%;
+    max-width: 450px;
+    margin: 50px auto;
+    padding: 30px;
+    background: white;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.delete-container h2 {
+    font-size: 2rem;
+    color: #dc3545;
+}
+
+.warning-message {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.delete-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.delete-btn {
+    background: #dc3545;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+.delete-btn:hover {
+    background: #c82333;
+}
+
+.cancel-btn {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.cancel-btn:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .delete-container {
+        width: 90%;
+        padding: 20px;
+    }
+}
+
+/* Chat Room (Slack Style) */
+.chat-container {
+    width: 80%;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background: white;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Chat Box */
+.chat-box {
+    max-height: 350px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Individual Message */
+.chat-message {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px;
+    background: white;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Avatar */
+.chat-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Message Content */
+.message-content {
+    flex: 1;
+}
+
+.message-content strong {
+    font-size: 1rem;
+    color: #007bff;
+}
+
+.timestamp {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 10px;
+}
+
+.message-content p {
+    margin: 5px 0 0;
+}
+
+/* Chat Input */
+.chat-input {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.send-btn {
+    background: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.send-btn:hover {
+    background: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .chat-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+
+    .timestamp {
+        font-size: 0.7rem;
+    }
+}
+  /* Chat Avatar */
+.chat-avatar {
+    width: 40px;
+    aspect-ratio: 1 / 1; /* Ensures it's always square */
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+
+/* Recent Chats Page */
+.recent-chats-container {
+    width: 90%;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    background: white;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.recent-chats-container h2 {
+    font-size: 2rem;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+/* Chat Room List */
+.chat-room-list {
+    list-style: none;
+    padding: 0;
+}
+
+.chat-room-card {
+    background: #f8f9fa;
+    padding: 15px;
+    margin: 10px auto;
+    border-radius: 6px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.chat-room-card h3 {
+    font-size: 1.2rem;
+    color: #007bff;
+}
+
+.chat-room-card p {
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Open Chat Button */
+.chat-btn {
+    display: inline-block;
+    background: #007bff;
+    color: white;
+    padding: 8px 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.chat-btn:hover {
+    background: #0056b3;
+}
+
+/* No Chats Found */
+.no-chats {
+    font-style: italic;
+    color: #999;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .recent-chats-container {
+        width: 95%;
+        padding: 20px;
+    }
+    .chat-room-card {
+        width: 90%;
+    }
+    .chat-btn {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+    }
+}
+
+/*  register disclaimer pop-up */
+  .disclaimer-container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+       .disclaimer-container h1, h2 {
+            color: #333;
+        }
+       .disclaimer-container ul {
+            padding-left: 20px;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #d9534f;
+        }
+
+

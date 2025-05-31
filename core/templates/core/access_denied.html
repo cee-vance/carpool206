@@ -1,0 +1,7 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+<h2>Access Denied</h2>
+<p>{{ message }}</p>
+<a href="{% url 'chat:recent_chats' %}" class="btn btn-primary">View Your Chats</a>
+{% endblock %}

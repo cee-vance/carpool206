@@ -1,0 +1,62 @@
+{% extends "core/base.html" %}
+
+{% block title %}Chat Room #{{ chat_room.id }}{% endblock %}
+
+{% block content %}
+<div class="chat-container">
+    <h2>Chat Room #{{ chat_room.id }}</h2>
+
+    <div id="chat-box" class="chat-box">
+        {% for message in messages %}
+            <div class="chat-message">
+                <div class="message-content">
+                    <strong>{{ message.sender.email }}</strong>
+                    <span class="timestamp">{{ message.timestamp }}</span>
+                    <p>{{ message.content }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="chat-input">
+        <input type="text" id="message-input" placeholder="Type a message...">
+        <button onclick="sendMessage()" class="send-btn">Send</button>
+    </div>
+</div>
+
+<script>
+    const chatSocket = new WebSocket(`ws://${window.location.host}/ws/chat/{{ chat_room.id }}/`);
+    const userEmail = "{{ request.user.username }}";
+
+    chatSocket.onmessage = function(event) {
+        const data = JSON.parse(event.data);
+        const chatBox = document.getElementById("chat-box");
+
+        const newMessage = document.createElement("div");
+        newMessage.classList.add("chat-message");
+
+        newMessage.innerHTML = `
+            <img src="${data.avatar}" alt="Avatar" class="chat-avatar">
+            <div class="message-content">
+                <strong>${data.sender}</strong>
+                <span class="timestamp">${new Date().toLocaleTimeString()}</span>
+                <p>${data.content}</p>
+            </div>
+        `;
+
+        chatBox.appendChild(newMessage);
+        chatBox.scrollTop = chatBox.scrollHeight; // Auto-scroll to latest message
+    };
+
+    function sendMessage() {
+        const messageInput = document.getElementById("message-input");
+        if (messageInput.value.trim()) {
+            chatSocket.send(JSON.stringify({
+                sender: userEmail,
+                content: messageInput.value
+            }));
+            messageInput.value = "";  // Clear input after sending
+        }
+    }
+</script>
+{% endblock %}

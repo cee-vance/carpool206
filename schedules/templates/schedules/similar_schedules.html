@@ -1,0 +1,27 @@
+{% extends "core/base.html" %}
+
+{% block title %}Matching Schedules{% endblock %}
+
+{% block content %}
+<div class="similar-schedules-container">
+    <h2>Matching Schedules for {{ schedule.user.username }}</h2>
+    <p><strong>Arrival Time:</strong> {{ schedule.arrival_time }}</p>
+
+    {% if matches %}
+        <h3>Similar Schedules:</h3>
+        <ul class="schedule-list">
+            {% for match in matches %}
+            <li class="schedule-card">
+                <strong>{{ match.user.username }}</strong>
+                <br>📍 <strong>Start Distance:</strong> {{ match.start_distance }} km
+                <br>🎯 <strong>Destination Distance:</strong> {{ match.dest_distance }} km
+                <br>⏰ <strong>Arrival Time:</strong> {{ match.arrival_time }}
+                <br><a href="{% url 'chat:chat_room_redirect' match.user.email %}" class="chat-btn">Chat with {{ match.user.username }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p class="no-schedules">No similar schedules found.</p>
+    {% endif %}
+</div>
+{% endblock %}

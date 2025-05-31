@@ -1,0 +1,22 @@
+{% extends "core/base.html" %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+  <div class="profile-container">
+        <h2>Profile Page</h2>
+        <img src="{{ user.profile_picture.url }}" alt="Profile Picture" class="profile-picture">
+        <p><strong>Username:</strong> {{ user.username }}</p>
+
+        {% if user.social_links %}
+            <h3>Social Media</h3>
+            <ul>
+                {% for link in user.social_links %}
+                    <li><a href="{{ link }}" target="_blank">{{ link }}</a></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No social media links added.</p>
+        {% endif %}
+    </div>
+{% endblock %}

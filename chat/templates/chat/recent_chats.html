@@ -1,0 +1,27 @@
+{% extends "core/base.html" %}
+
+{% block title %}Recent Chats{% endblock %}
+
+{% block content %}
+<div class="recent-chats-container">
+    <h2>Your Recent Chats</h2>
+
+    {% if chat_rooms %}
+        <ul class="chat-room-list">
+            {% for room in chat_rooms %}
+            <li class="chat-room-card">
+                <h3>Chat Room #{{ room.id }}</h3>
+                <p><strong>Participants:</strong>
+                    {% for user in room.users.all %}
+                        {{ user.username }}{% if not forloop.last %}, {% endif %}
+                    {% endfor %}
+                </p>
+                <a href="{% url 'chat:chat_room' room.id %}" class="chat-btn">Open Chat</a>
+            </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p class="no-chats">You haven't started any chats yet.</p>
+    {% endif %}
+</div>
+{% endblock %}
