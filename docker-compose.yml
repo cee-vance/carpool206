@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  carpool-app:
+    build: .
+    container_name: carpool-app
+    restart: always
+    ports:
+      - "443:443"  # Expose HTTPS
+      - "8000:8000"  # Allow access for development
+    volumes:
+      - /etc/letsencrypt/live/yourdomain.com:/etc/ssl/certs
+      - /etc/letsencrypt/privkey.pem:/etc/ssl/private/privkey.pem
+      - ./db.sqlite3:/app/db.sqlite3  # Persist SQLite database
+    environment:
+      - SSL_CERT_PATH=/etc/ssl/certs/fullchain.pem
+      - SSL_KEY_PATH=/etc/ssl/private/privkey.pem
+    command: ["python", "manage.py", "runserver", "0.0.0.0:8000"]
