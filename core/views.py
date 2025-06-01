@@ -27,36 +27,45 @@ def register(request):
 
 from django.contrib.auth.decorators import login_required
 
+
 @login_required
 def edit_profile(request):
     user = request.user
+
     if request.method == "POST":
-        user.profile_picture = request.FILES.get("profile_picture")
+        # Handle file upload for profile picture
+        if "profile_picture" in request.FILES:
+            user.profile_picture = request.FILES["profile_picture"]
+
+        # Handle multiple social links
         user.social_links = request.POST.getlist("social_links")
         user.save()
-        return redirect("core/profile")  # Redirect to profile page after updating
-    return render(request, "core/edit_profile.html", {"user": user})
+
+        return redirect("core:profile")  # ✅ Redirect to profile page after updating
+
+    return render(request, "core/edit_profile.html", {
+        "user": user,
+        "current_profile_picture": user.profile_picture.url if user.profile_picture else "/static/images/default-profile.jpg",
+        "current_social_links": user.social_links,
+    })
 
 
 
 @login_required
 def profile(request):
     user = request.user
-    return render(request, "core/profile.html", {"user":user})
+    return render(request, "core/profile.html", {"user":user,"edit":True})
 
 
 from django.contrib.auth.decorators import login_required
 
 
 @login_required
-def user_profile(request, email):
+def user_profile(request, username):
     """Display a user's profile and check for an existing chat room."""
-    profile_user = get_object_or_404(User, email=email)
+    profile_user = get_object_or_404(User, username=username)
 
-    return render(request, "core/user_profile.html", {
-        "profile_user": profile_user,
-
-    })
+    return render(request, "core/profile.html", {"user":profile_user, "edit": False})
 
 
 def landing_page(request):

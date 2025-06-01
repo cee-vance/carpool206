@@ -9,7 +9,22 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 
     {% block extra_head %}
-    <!-- Child templates can add extra styles or meta tags here -->
+    <style>
+        /* ✅ Gray out links for unauthenticated users */
+        .nav-links .disabled {
+            color: gray;
+            pointer-events: none;
+            text-decoration: none;
+        }
+
+        /* ✅ Add styling for the username display */
+        .user-info {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-weight: bold;
+        }
+    </style>
     {% endblock %}
 </head>
 <body>
@@ -17,14 +32,19 @@
     <header>
         <nav>
             <ul class="nav-links">
-                <li><a href="{% url 'core:profile' %}">Profile</a></li>
-                <li><a href="{% url 'chat:recent_chats' %}">Chats</a></li>
-                <li><a href="{% url 'schedules:schedule_list' %}">Schedules</a></li>
                 {% if request.user.is_authenticated %}
-                    <li>
-                       <li><a href="{% url 'core:logout' %}" class="login-btn">Logout</a></li>
-                    </li>
+                    <li><a href="{% url 'core:profile' %}">Profile</a></li>
+                    <li><a href="{% url 'chat:recent_chats' %}">Chats</a></li>
+                    <li><a href="{% url 'schedules:schedule_list' %}">Schedules</a></li>
+                    <li><a href="{% url 'core:logout' %}" class="login-btn">Logout</a></li>
+
+                    <!-- ✅ Display logged-in user's username -->
+                    <li class="user-info">Welcome, {{ request.user.username }}!</li>
+
                 {% else %}
+                    <li><a href="#" class="disabled">Profile</a></li>
+                    <li><a href="#" class="disabled">Chats</a></li>
+                    <li><a href="#" class="disabled">Schedules</a></li>
                     <li><a href="{% url 'core:login' %}" class="login-btn">Login</a></li>
                 {% endif %}
             </ul>

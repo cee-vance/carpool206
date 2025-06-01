@@ -13,7 +13,7 @@ urlpatterns = [
     # profile related
     path("profile/", profile, name="profile"),
     path("profile/edit/", edit_profile, name="edit_profile"),
-   path("profile/<str:email>/", user_profile, name="user_profile"),
+   path("profile/<str:username>/", user_profile, name="user_profile"),
 
     # password reset
     path("password_reset/", PasswordResetView.as_view(template_name="core/password_reset.html"), name="password_reset"),

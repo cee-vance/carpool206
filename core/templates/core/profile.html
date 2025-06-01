@@ -5,7 +5,10 @@
 {% block content %}
   <div class="profile-container">
         <h2>Profile Page</h2>
-        <img src="{{ user.profile_picture.url }}" alt="Profile Picture" class="profile-picture">
+
+        <img src="{% if user.profile_picture %}{{ user.profile_picture.url }}{% else %}/static/images/default-profile.jpg{% endif %}"
+     alt="Profile Picture"
+     class="profile-picture">
         <p><strong>Username:</strong> {{ user.username }}</p>
 
         {% if user.social_links %}
@@ -18,5 +21,10 @@
         {% else %}
             <p>No social media links added.</p>
         {% endif %}
+
+       <!-- ✅ Add Edit Profile Link -->
+      {% if edit %}
+        <a href="{% url 'core:edit_profile' %}" class="edit-profile-link">Edit Profile</a>
+      {% endif %}
     </div>
 {% endblock %}

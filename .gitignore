@@ -13,7 +13,7 @@ logs/
 *.log
 
 # Database files
-db.sqlite3
+# db.sqlite3
 *.pdb
 
 # Ignore Django migrations

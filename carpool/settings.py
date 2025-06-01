@@ -26,7 +26,7 @@ GOOGLE_MAPS_API_KEY = "b6426b4a5621525215a5a5216486455658853b2"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["https://carpool206.org","https://www.carpool206.org", "44.229.151.154", "127.0.0.1"]
 
 AUTH_USER_MODEL = "core.CustomUser"
 
@@ -36,6 +36,8 @@ MEDIA_URL = "/media/"
 LOGIN_URL = "core/login"  # Ensure this matches your login route name
 LOGOUT_REDIRECT_URL = "core:home"
 LOGIN_REDIRECT_URL = "core:home"
+
+CSRF_TRUSTED_ORIGINS = ["https://carpool206.org"]
 
 # Application definition
 

@@ -10,6 +10,7 @@ from django.db.models import Q
 
 User = get_user_model()
 
+
 @login_required
 def chat_room(request, room_id):
     """Restrict access and load chat history."""
@@ -17,14 +18,19 @@ def chat_room(request, room_id):
 
     # Verify user belongs to this chat room
     if request.user not in chat_room.users.all():
-        return render(request, "chat/access_denied.html", {"message": "You do not have permission to access this chat."})
+        return render(request, "chat/access_denied.html",
+                      {"message": "You do not have permission to access this chat."})
 
     # Retrieve previous messages for this chat room
     messages = Message.objects.filter(room=chat_room).order_by("timestamp")  # Ensure chronological order
 
+    # Determine the other user (not the logged-in user)
+    other_user = chat_room.users.exclude(username=request.user.username).first()  # ✅ Get the other participant
+
     return render(request, "chat/chat_room.html", {
         "chat_room": chat_room,
-        "messages": messages
+        "messages": messages,
+        "other_user": other_user,  # ✅ Pass other user to the template
     })
 
 @login_required
@@ -47,7 +53,7 @@ def chat_room_redirect(request, user_email):
         chat_room.users.add(logged_in_user, other_user)
         chat_room.save()
 
-    return redirect(f"/chat/{chat_room.id}/")
+    return redirect(f"/chat/{chat_room.id}/", {other_user:other_user})
 
 
 
