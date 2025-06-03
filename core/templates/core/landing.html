@@ -4,7 +4,11 @@
 <div class="hero">
     <h1>Reduce Carbon, Share Rides, Make a Difference!</h1>
     <p>Join Seattle’s movement toward sustainable commuting.</p>
-    <button class="cta-btn">Start Carpooling Today!</button>
+    <form action="{% url 'core:register' %}" method="post">
+    {% csrf_token %}
+     <button class="cta-btn">Start Carpooling Today!</button>
+</form>
+
 </div>
 
 <div class="stats-section">
