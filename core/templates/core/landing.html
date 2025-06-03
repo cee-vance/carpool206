@@ -34,7 +34,7 @@
     <div class="steps">
         <div class="step">🚗 <strong>Sign up:</strong> Create your profile</div>
         <div class="step">📅 <strong>Find matches:</strong> Smart AI pairs you with ideal carpoolers</div>
-        <div class="step">🌱 <strong>Track impact:</strong> See your carbon footprint reduction</div>
+        <div class="step">🌱 <strong>Track impact:</strong> See your carbon footprint reduction *(COMING SOON)</div>
     </div>
 </div>
 
@@ -45,6 +45,7 @@
         <label for="distance">Enter your daily commute distance (miles):</label>
         <input type="number" id="distance" name="distance" required>
         <button type="submit">Calculate</button>
+
     </form>
     {% if carbon_savings %}
         <p>You save approximately <strong>{{ carbon_savings }}</strong> lbs of CO₂ per year!</p>
