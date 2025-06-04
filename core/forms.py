@@ -8,7 +8,7 @@ CustomUser = get_user_model()
 class CustomUserCreationForm(UserCreationForm):
     class Meta:
         model = CustomUser
-        fields = ("username","email", "password1", "password2", "profile_picture", "social_links")
+        fields = ("username","email", "password1", "password2" )#, "profile_picture", "social_links")
 
 def register(request):
     if request.method == "POST":
