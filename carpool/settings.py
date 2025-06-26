@@ -42,14 +42,16 @@ CSRF_TRUSTED_ORIGINS = ["https://carpool206.org"]
 # Application definition
 
 INSTALLED_APPS = [
-'daphne',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'daphne',
     'django.contrib.staticfiles',
     'core',
+
     'schedules',
     'channels',
     'chat',
