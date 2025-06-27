@@ -1,17 +1,35 @@
 version: '3.8'
 
 services:
+  db:
+    image: postgres:15
+    container_name: carpool-db
+    restart: always
+    environment:
+      POSTGRES_DB: carpool
+      POSTGRES_USER: carpooluser
+      POSTGRES_PASSWORD: carpoolpass
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"  # Optional; only expose if needed for dev access
+
   carpool-app:
     build: .
     container_name: carpool-app
     restart: always
+    depends_on:
+      - db
     ports:
-      - "8000:8000"  # Allow access for development
+      - "8000:8000"
     volumes:
       - /etc/letsencrypt/live/carpool206.org:/etc/ssl/certs
       - /etc/letsencrypt/privkey.pem:/etc/ssl/private/privkey.pem
-      - ./db.sqlite3:/app/db.sqlite3  # Persist SQLite database
     environment:
       - SSL_CERT_PATH=/etc/ssl/certs/fullchain.pem
       - SSL_KEY_PATH=/etc/ssl/private/privkey.pem
+      - DATABASE_URL=postgres://carpooluser:carpoolpass@db:5432/carpool
     command: ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+
+volumes:
+  postgres_data:
