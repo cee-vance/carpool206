@@ -13,6 +13,11 @@ The application is **deployed on AWS** and publicly accessible at [carpool206.or
 - **Unit tests** for backend validation  
 - **Cloud deployment** on AWS with a live production site  
 
+## Demo
+Watch the project in action: [YouTube Demo](https://youtu.be/SFem2OD_BZs)
+
+[![Carpool206 Demo](https://img.youtube.com/vi/SFem2OD_BZs/0.jpg)](https://youtu.be/SFem2OD_BZs)
+
 ## Tech Stack
 - **Backend:** Django, Python  
 - **Database:** PostgreSQL  
